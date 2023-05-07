@@ -710,11 +710,16 @@ border-radius: 4px;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.link-sdw:hover .blue-text, .link-sdw:focus .blue-text {
+  
+    transform: translateY(0);
+}
+
 .link-sdw:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-    
+  1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+
  /* open blue window */
 
 .portfolio-animation {
@@ -741,7 +746,7 @@ font-size: 18px;
 line-height: 1.6;
 letter-spacing: 0.03em;
 color: #FFFFFF;
-transform: translateY(0);
+
 transition: transform 250ms ease;
 }
 
