@@ -59,10 +59,11 @@ background: #FFFFFF;
 box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 border-radius: 4px;
 padding: 40px;
+transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden .modal {
-  transition: translate(-50%, -50%) scale(0.6);
+  transform: translate(-50%, -50%) scale(0.6);
 }
 
 .modal-close-btn {
@@ -112,7 +113,7 @@ margin-bottom: 10px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   padding-left: 42px;
-  transform: border-color 250 ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-form-input:focus {
@@ -126,7 +127,7 @@ outline: none;
 .contact-form-input-wrapper {
   position: relative;
   display: block;
-margin-top: 4px;
+  margin-top: 4px;
 }
 
 .contact-form-icon {
@@ -179,17 +180,6 @@ outline: none;
   color: #757575;
 }
 
-.contact-form-checkbox-label::before {
-  content: '';
-  display: inline-block;
-  width: 16px;
-  height: 15px;
-  border: 2px solid #212121;
-  border-radius: 2px;
-  cursor: pointer;
-  margin-right: 8.38px;
-}
-
 .contact-form-submit-btn {
 width: 200px;
 height: 50px;
@@ -212,14 +202,43 @@ text-align: center;
 letter-spacing: 0.06em;
 color: #FFFFFF;
 margin-top: 30px;
+
+}
+.contact-form-submit-btn:hover, .contact-form-submit-btn:focus {
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-form-checkbox {
 margin-bottom: 10px;
 }
 
-.contact-form-checkbox:checked + .contact-form-checkbox-label::before {
+.contact-form-checkbox:checked + .check-icon {
+  border-color: var(--accent-color);
 background-color: var(--accent-color);
+background-size: contain;
+background-origin: content-box;
+}
+
+.checkbox-link {
+color: rgba(33, 150, 243, 1);
+}
+
+.check-icon {
+  fill: #FFFFFF;
+  padding: 0;
+  vertical-align: middle;
+  margin-right: 8.38px;
+  border: 2px solid #212121;
+  border-radius: 2px;
+  width: 16px;
+  height: 15px;
+  cursor: pointer;
+ 
+}
+
+.check-icon:focus {
+fill: var(--accent-color);
+
 }
 
 /* header */
@@ -925,6 +944,14 @@ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 border-radius: 4px;
 background: #2F303A;
 padding-left: 16px;
+}
+
+.subcribe-input {
+  transform: border-color 250 ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.subcribe-input:focus {
+  border-color: var(--title-text-color);
+  outline: none;
 }
 
 .sub-text {
